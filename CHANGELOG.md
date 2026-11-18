@@ -26,7 +26,7 @@ First release as an open-source web wallpaper, with its own site.
 - A damaged or old saved setting can no longer break the page.
 
 ### Site and repo
-- A GitHub Pages site with a live preview, step-by-step setup for Mac (Plash) and Windows (Lively Wallpaper), and the wallpaper at `/wallpaper/`, in coral to sit alongside [Animated Weekdays](https://shazmoghaddam.github.io/animated-weekdays-live-wallpaper/).
+- A GitHub Pages site with a live preview, step-by-step setup for Mac (Plash) and Windows (Lively Wallpaper), and the wallpaper at `/wallpaper/`, in Persian blue to sit alongside [Animated Weekdays](https://shazmoghaddam.github.io/animated-weekdays-live-wallpaper/).
 - A Check workflow that opens the wallpaper at phone, iPad and desktop sizes in every language, with breathing on and off, and checks every month fits.
 - README with a banner and screenshots, a social preview image, a contributing guide, a security policy, Dependabot for the workflows, and scripts to rebuild the fonts and images.
 - The Android app in `android/` is unchanged.

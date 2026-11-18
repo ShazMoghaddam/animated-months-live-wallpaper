@@ -22,7 +22,8 @@ SERIF = ROOT / "site/fonts/Fraunces-700-italic.woff2"
 OUT = ROOT / "docs"
 KEY = "wallpaper_months_v1"
 NOVEMBER = datetime(2026, 11, 18, 9, 41, 0, tzinfo=timezone.utc)
-ACCENT = "#FF7A5C"
+ACCENT = "#C9D2FF"   # pale blue, for the small label on the Persian blue card
+CARD_BG = "#1c39bb"  # Persian blue
 FRAME = 8.0  # a calm moment of the breathing, chosen by eye
 
 
@@ -57,7 +58,7 @@ CARD = """({ kicker, title, line, pad, size, serif }) => {
   const foot = document.createElement('p');
   foot.textContent = line;
   Object.assign(foot.style, { position: 'fixed', left: pad + 'px', bottom: pad + 'px', margin: 0, zIndex: 50,
-    font: `500 ${size * .55}px/1 Inter`, letterSpacing: '.02em', color: 'rgba(255,255,255,.62)' });
+    font: `500 ${size * .55}px/1 Inter`, letterSpacing: '.02em', color: 'rgba(255,255,255,.8)' });
   document.body.append(box, foot);
   for (const id of ['settingsBtn', 'fullscreenBtn', 'datetime']) document.getElementById(id).style.display = 'none';
   return face.load();
@@ -74,7 +75,7 @@ async def main():
         await ctx.close()
 
         # Settings open, with a custom colour and font
-        ctx, page = await open_wallpaper(browser, 1280, 720, {"BG": "#1a1110", "FG": "#ff7a5c", "fontName": "Monoton"})
+        ctx, page = await open_wallpaper(browser, 1280, 720, {"BG": "#1c39bb", "FG": "#f4f4f2", "fontName": "Monoton"})
         await page.click("#settingsBtn")
         await page.clock.run_for(600)
         await page.screenshot(path=OUT / "settings.png")
@@ -98,7 +99,7 @@ async def main():
 
         # README banner and social preview: the wallpaper itself, with a title
         for name, (w, h), size, pad in (("banner", (1280, 400), 34, 40), ("social-preview", (1280, 640), 46, 56)):
-            ctx, page = await open_wallpaper(browser, w, h, {"fontName": "Montserrat"}, frame=FRAME)
+            ctx, page = await open_wallpaper(browser, w, h, {"fontName": "Montserrat", "BG": CARD_BG, "FG": "#ffffff"}, frame=FRAME)
             await page.evaluate(CARD, {
                 "kicker": "Live wallpaper · Shaz Moghaddam",
                 "title": "Animated Months",

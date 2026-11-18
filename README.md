@@ -66,7 +66,7 @@ https://shazmoghaddam.github.io/animated-months-live-wallpaper/wallpaper/
 
 Everything except the previewed month is saved in your browser.
 
-![Settings open, with a dark brown background, coral text and the Monoton font](docs/settings.png)
+![Settings open, with a Persian blue background, off-white text and the Monoton font](docs/settings.png)
 
 ## Run it yourself
 
